@@ -1,32 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using tugas_apk;
 
 
-
-
-
-// =================== MAIN PROGRAM ===================
 class Program
 {
     static void Main(string[] args)
     {
-        Library library = new Library();
-
-        // Tambah buku (Overloading)
-        library.AddBook("Belajar C#", "Budi");
-        library.AddBook(new Book("OOP dengan Java", "Ani"));
-
-        // Tambah member (Inheritance + Polymorphism)
-        Student s1 = new Student("Andi", 1, "Informatika");
-        Teacher t1 = new Teacher("Pak Joko", 2, "Pemrograman");
-
-        library.AddMember(s1);
-        library.AddMember(t1);
-
-        // Tampilkan semua data
-        library.ShowAllBooks();
-        library.ShowAllMembers();
-
-        Console.ReadKey();
+     var Mobil = new List<Mobil>
+        {
+            new Mobil("Toyota", 300000000),
+            new Mobil("Honda", 250000000),
+            new Mobil("Suzuki", 200000000)
+        };
+        var Customer = new List<Customer>
+        {
+            new Customer("Alice", 500000000),
+            new Customer("Bob", 150000000)
+        };
+        foreach (var customer in Customer)
+        {
+            customer.Info();
+            foreach (var car in Mobil)
+            {
+                car.Info();
+                customer.BeliMobil(car);
+            }
+            Console.WriteLine();
+        }
     }
 }
