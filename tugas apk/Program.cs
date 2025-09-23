@@ -33,10 +33,13 @@ class Program
         mobils.ForEach(m => m.Info());  // Polymorphism (Info() berbeda tiap jenis mobil)
 
         Console.WriteLine("\n== TRANSAKSI ==");
-        new Purchase(cust, mobils[1]).Info(); // Andi beli Fortuner
-        new Purchase(cust1, mobils[3]).Info();
-        new Purchase(cust2, mobils[4]).Info();
-        new Purchase(cust3, mobils[2]).Info();
+        // versi biasa
+        new Purchase(cust, mobils[1]).Info();
+        // versi overloading (pakai catatan)
+        new Purchase(cust1, mobils[3]).Info("Pembayaran kredit 12 bulan");
+        // versi overloading (pakai jumlah unit)
+        new Purchase(cust2, mobils[4]).Info(2);
+
 
 
         Console.ReadKey();
